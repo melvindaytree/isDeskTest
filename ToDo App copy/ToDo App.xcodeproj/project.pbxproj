@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		237E275321B4356D005EAFBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 237E275221B4356D005EAFBD /* GoogleService-Info.plist */; };
-		237E275521B43AC7005EAFBD /* userItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237E275421B43AC7005EAFBD /* userItem.swift */; };
+		237E275521B43AC7005EAFBD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237E275421B43AC7005EAFBD /* Item.swift */; };
 		6A92548A6FD19D889B6F5778 /* Pods_ToDo_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1F658DECE84CA454F8B72C /* Pods_ToDo_App.framework */; };
 		89FB67581D5C82AB002B2484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB67571D5C82AB002B2484 /* AppDelegate.swift */; };
 		89FB675D1D5C82AB002B2484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FB675B1D5C82AB002B2484 /* Main.storyboard */; };
@@ -21,7 +21,7 @@
 
 /* Begin PBXFileReference section */
 		237E275221B4356D005EAFBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		237E275421B43AC7005EAFBD /* userItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userItem.swift; sourceTree = "<group>"; };
+		237E275421B43AC7005EAFBD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6CAD22867EC9B5D2B7805686 /* Pods-ToDo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDo App/Pods-ToDo App.debug.xcconfig"; sourceTree = "<group>"; };
 		89FB67541D5C82AB002B2484 /* ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FB67571D5C82AB002B2484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			children = (
 				89FB67571D5C82AB002B2484 /* AppDelegate.swift */,
 				89FB675B1D5C82AB002B2484 /* Main.storyboard */,
-				237E275421B43AC7005EAFBD /* userItem.swift */,
+				237E275421B43AC7005EAFBD /* Item.swift */,
 				89FB675E1D5C82AB002B2484 /* Assets.xcassets */,
 				89FB67601D5C82AB002B2484 /* LaunchScreen.storyboard */,
 				89FB67631D5C82AB002B2484 /* Info.plist */,
@@ -134,7 +134,7 @@
 				TargetAttributes = {
 					89FB67531D5C82AB002B2484 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = PVUYH743WK;
+						DevelopmentTeam = 6D48UJ2RKX;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -177,8 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ToDo App/Pods-ToDo App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -187,8 +185,6 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -205,15 +201,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ToDo App-checkManifestLockResult.txt",
 			);
@@ -229,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237E275521B43AC7005EAFBD /* userItem.swift in Sources */,
+				237E275521B43AC7005EAFBD /* Item.swift in Sources */,
 				89FB676C1D5C837D002B2484 /* SignUpViewController.swift in Sources */,
 				89FB676A1D5C82F5002B2484 /* LoginViewController.swift in Sources */,
 				89FB676E1D5C8411002B2484 /* ItemsTableViewController.swift in Sources */,
@@ -354,7 +346,7 @@
 			baseConfigurationReference = 6CAD22867EC9B5D2B7805686 /* Pods-ToDo App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PVUYH743WK;
+				DEVELOPMENT_TEAM = 6D48UJ2RKX;
 				INFOPLIST_FILE = "ToDo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -369,7 +361,7 @@
 			baseConfigurationReference = B5A89C02847A64C52225A4C2 /* Pods-ToDo App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PVUYH743WK;
+				DEVELOPMENT_TEAM = 6D48UJ2RKX;
 				INFOPLIST_FILE = "ToDo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

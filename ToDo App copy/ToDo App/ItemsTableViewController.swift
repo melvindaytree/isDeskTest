@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class ItemsTableViewController: UITableViewController {
 
     var user: User!
-    var items = [userItem]()
+    var items = [Item]()
     var ref: DatabaseReference!
     private var databaseHandle: DatabaseHandle!
     
@@ -22,6 +23,33 @@ class ItemsTableViewController: UITableViewController {
         user = Auth.auth().currentUser
         ref = Database.database().reference()
         startObservingDatabase()
+        
+        
+        ref.observeSingleEvent(of: .childAdded, with: { snapshot in
+            
+            if !snapshot.exists() { return }
+            
+            print(snapshot)
+            
+            let key = snapshot.key
+            print(key)
+            
+            let dict = snapshot.value as! [String: AnyObject]
+            let seat = dict["seat"]
+            
+            print(seat)
+           
+
+        })
+        
+        //This brings all users uid's fields and prints them
+        //This code will be used to show the users profile at the top of the page
+        databaseHandle = ref.child("users/\(self.user.uid)").observe(.childAdded, with: { (data) in
+            
+            print(data.key)
+            print(data.value!)
+            print("_break_")
+        })
     }
     
     // MARK: - Table view data source
@@ -31,10 +59,12 @@ class ItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(items)
         return items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(items)
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let item = items[indexPath.row]
         cell.textLabel?.text = item.seat
@@ -74,13 +104,14 @@ class ItemsTableViewController: UITableViewController {
     
     func startObservingDatabase () {
         databaseHandle = ref.child("users/\(self.user.uid)/seat").observe(.value, with: { (snapshot) in
-            var newItems = [userItem]()
+            var newItems = [Item]()
             
             for itemSnapShot in snapshot.children {
-                let item = userItem(snapshot: itemSnapShot as! DataSnapshot)
+                let item = Item(snapshot: itemSnapShot as! DataSnapshot)
                 newItems.append(item)
             }
             
+            print("updated data")
             self.items = newItems
             self.tableView.reloadData()
             

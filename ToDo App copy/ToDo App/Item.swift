@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-class userItem {
+class Item {
     var ref: DatabaseReference?
     var seat: String?
     var streak: String?
@@ -20,6 +20,7 @@ class userItem {
         let data = snapshot.value as! Dictionary<String, String>
         seat = data["seat"]! as String
         streak = data["streak"]! as String
+        
     }
 
 }
